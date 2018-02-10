@@ -12,7 +12,6 @@ class Layer extends Component {
 
   componentWillMount(){
     this.props.dispatch(fetchData())
-
   }
   render() {
     return (
@@ -32,4 +31,4 @@ class Layer extends Component {
     );
   }
 }
-export default withRouter(connect((store)=>{return{list:store.list.list,}})(Layer))
+export default withRouter(connect((store)=>{return{list:store.list.list,left:store.list.left,complet:store.list.complet}})(Layer))

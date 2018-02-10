@@ -38,7 +38,7 @@ export default class Home extends Component {
       	 {this.props.list.map((title,i)=><List  id={title.id} key ={i} title={title.name}  dispatch={this.props.dispatch} />)}
       
       	</ul>
-      <Status/>
+      <Status left={this.props.left} complet={this.props.complet}/>
       </div>
       </div>
     );

@@ -43,10 +43,33 @@ function receiveError(json) {
 	}
 };
 
+function Status(json) {
+	return {
+		type: "ITEM_LEFT",
+		data: json
+	}
+};
+
+function FilterUp() {
+	return {
+		type: "FILTER_UPDATE",
+		data: 0
+	}
+};
+
+function Filter(json) {
+	return {
+		type: "FILTER",
+		data: json
+	}
+};
+
+
 
 export function addList(item){
 	return function(dispatch) {
 		dispatch(addListT(item))
+		dispatch(Status())
 	}
 }
 
@@ -60,6 +83,7 @@ export function deleteList(item){
 export function fetchData() {
 	return function(dispatch) {
 		dispatch(receiveData(list.list));
+		dispatch(Status())
 	}
 }
 
@@ -68,6 +92,18 @@ export function updateList(item){
 	return function(dispatch) {
 		console.log("f")
 		dispatch(updateL(item));
+	}
+}
+
+export function updateFilter(){
+	return function(dispatch) {
+		dispatch(FilterUp());
+	}
+}
+
+export function filterList(filter){
+	return function(dispatch) {
+		dispatch(Filter(filter));
 	}
 }
 

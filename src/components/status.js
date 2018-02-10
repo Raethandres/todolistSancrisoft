@@ -12,11 +12,23 @@ export default class Status extends Component {
 
   render() {
    return (
-    <div>
-     <p>status</p>
-     <p>conut</p>
-     <p>filter</p>
+     <div className="add">
+     
+    <div className="navigation">
+    <div className="navigation">
+     <p>{this.props.left}</p>
+     <p>items left</p>
+    </div>
+    <div className="navigation">
+     <p>all</p>
+     <p>Active</p>
+     <p>Compled</p>
+    </div>
+    <div className="navigation">
      <p>clear</p>
+     <p>{this.props.complet}</p>
+    </div>
+    </div>
     </div>
     );
   }
