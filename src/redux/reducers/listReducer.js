@@ -25,10 +25,8 @@ export default function reducer(state={
 		}
 		case "ADD_LIST":{
 			let data=[...state.list]
-			console.log(data.length-1)
 			let newList={uready:true,name:action.payload,id:data[data.length-1]===undefined ? 0:data[data.length-1].id+1}
 			data.push(newList)
-			console.log(newList)
 			return{
 				...state,
 				list:data,
@@ -61,7 +59,6 @@ export default function reducer(state={
 			}
 		}
 		case "FILTER":{
-			console.log(action.payload,"payload")
 			return{
 				...state,
 				listShow:state.list.filter(list=>list.uready!==action.payload),				
@@ -78,7 +75,6 @@ export default function reducer(state={
 		
 		
 		case "UPDATE_LIST":{
-			console.log(action.payload)
 			const{id}=action.payload
 			const newList=[...state.list]
 			const listToUpdate=newList.findIndex(list=>list.id===id)

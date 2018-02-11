@@ -35,7 +35,6 @@ onClick(){
 
 
   render() {
-    console.log(this.props.list)
    return (
     <div className="col">
       <Status left={this.props.left} complet={this.props.complet} dispatch={this.props.dispatch}/>    

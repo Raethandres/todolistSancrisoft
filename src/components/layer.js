@@ -14,7 +14,6 @@ class Layer extends Component {
   
 
   render() {
-    console.log(1)
     return (
       
     	<section className="col">

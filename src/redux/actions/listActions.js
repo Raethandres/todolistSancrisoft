@@ -29,7 +29,6 @@ export function updateL(json){
 
 
 function deleteL(json) {
-	console.log(json,"del")
 	return{
 		type: "DELETE_LIST",
 		payload: json
@@ -66,7 +65,6 @@ function FilterUp() {
 };
 
 function Filter(json) {
-	console.log(json)
 	return {
 		type: "FILTER",
 		payload: json
@@ -120,14 +118,12 @@ export function updateList(item){
 }
 
 export function filterList(filter){
-	console.log(filter)
 	return function(dispatch) {
 		dispatch(Filter(filter));
 	}
 }
 
 export function clr(filter){
-	console.log(filter)
 	return function(dispatch) {
 		dispatch(clear(filter))
 		update(dispatch)

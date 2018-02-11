@@ -3,7 +3,6 @@ import {deleteList,updateList} from '../redux/actions/listActions'
 
 export default class List extends Component {
     constructor(props){
-        console.log(3)
         super(props)
         this.state={done:!this.props.check,value:this.props.title,upd:false}
     }
@@ -12,7 +11,6 @@ export default class List extends Component {
     onChange(event){
         let name=event.target.name
         let val=event.target.type === 'checkbox' ? event.target.checked : event.target.value
-        console.log(val)
         this.setState({[name]:val})
         if(name==="done"){
             this.props.dispatch(updateList({name:this.state.value,id:this.props.id,uready:!val}))  
@@ -38,7 +36,6 @@ export default class List extends Component {
   
 
 	render() {
-        console.log(this.props)
         let upd=this.state.upd
     	return (
 
