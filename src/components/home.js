@@ -19,6 +19,7 @@ export default class Home extends Component {
   handleChange(event) {
     this.setState({value: event.target.value});
   }
+  
   onKeyPress(e){
     if (e.key === 'Enter') {
         this.setState({upd:false})
