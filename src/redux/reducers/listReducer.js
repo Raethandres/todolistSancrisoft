@@ -1,12 +1,11 @@
 export default function reducer(state={
-	list:[{"name":"compra","id":0},{"name":"gana","id":1}],
+	list:[],
 	left:0,
 	complet:0,
 	listShow:[],
 	filter:0,
 	error:null,
 },action) {
-	console.log(action.type)
 	switch (action.type){
 		case "FETTCH_LIST":{
 			return{...state,fetching:true,list:[...state.list]}
@@ -36,7 +35,16 @@ export default function reducer(state={
 
 			}
 		}
+		case "CHECK_ALL":{
+			let data=[...state.list]
+			data.forEach(i=> {i.uready=false})
 
+			return{
+				...state,
+				list:data,
+
+			}
+		}
 		case "ITEM_LEFT":{
 			let data=[...state.list]
 			let count=0
@@ -53,9 +61,10 @@ export default function reducer(state={
 			}
 		}
 		case "FILTER":{
+			console.log(action.payload,"payload")
 			return{
 				...state,
-				listShow:state.list.filter(list=>list.uready!==action.payload),
+				listShow:state.list.filter(list=>list.uready!==action.payload),				
 				filter:action.payload,
 			}
 		}
@@ -70,7 +79,7 @@ export default function reducer(state={
 		
 		case "UPDATE_LIST":{
 			console.log(action.payload)
-			const{id,name}=action.payload
+			const{id}=action.payload
 			const newList=[...state.list]
 			const listToUpdate=newList.findIndex(list=>list.id===id)
 			newList[listToUpdate]=action.payload;
@@ -85,6 +94,13 @@ export default function reducer(state={
 			return{
 				...state,
 				list:state.list.filter(list=>list.id!==action.payload),
+			}
+		}
+
+		case "CLEAR":{
+			return{
+				...state,
+				list:state.list.filter(list=>list.uready!==false),
 			}
 		}
 		

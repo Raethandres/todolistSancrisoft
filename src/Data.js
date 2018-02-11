@@ -1,1 +1,0 @@
-export const list = {list:[{"name":"compra","id":0,uready:false},{"name":"gana","id":1,uready:true}]}

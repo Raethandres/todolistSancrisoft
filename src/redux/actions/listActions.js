@@ -1,4 +1,4 @@
-import {list} from "../../Data.js"
+import {list} from "../../Data.json"
 
 export function fetchList() {
 	return{
@@ -39,37 +39,58 @@ function deleteL(json) {
 function receiveError(json) {
 	return {
 		type: "FETTCH_ERR",
-		data: json
+		payload: json
 	}
 };
+
+function clear() {
+	return {
+		type: "CLEAR",
+		payload: 0
+	}
+};
+
 
 function Status(json) {
 	return {
 		type: "ITEM_LEFT",
-		data: json
+		payload: json
 	}
 };
 
 function FilterUp() {
 	return {
 		type: "FILTER_UPDATE",
-		data: 0
+		payload: 0
 	}
 };
 
 function Filter(json) {
+	console.log(json)
 	return {
 		type: "FILTER",
-		data: json
+		payload: json
 	}
 };
 
+function chALL() {
 
+	return {
+		type: "CHECK_ALL",
+		payload: 0
+	}
+};
+
+function update(dispatch){
+	dispatch(Status())
+	dispatch(FilterUp());
+	
+}
 
 export function addList(item){
 	return function(dispatch) {
 		dispatch(addListT(item))
-		dispatch(Status())
+		update(dispatch)
 	}
 }
 
@@ -77,33 +98,45 @@ export function addList(item){
 export function deleteList(item){
 	return function(dispatch) {
 		dispatch(deleteL(item))
+		update(dispatch)
+		
 		
 	}
 }
 export function fetchData() {
 	return function(dispatch) {
-		dispatch(receiveData(list.list));
+		dispatch(receiveData(list));
+		update(dispatch)
 		dispatch(Status())
 	}
 }
 
 export function updateList(item){
-	console.log(item)
 	return function(dispatch) {
-		console.log("f")
 		dispatch(updateL(item));
-	}
-}
-
-export function updateFilter(){
-	return function(dispatch) {
-		dispatch(FilterUp());
+		update(dispatch)
+		
 	}
 }
 
 export function filterList(filter){
+	console.log(filter)
 	return function(dispatch) {
 		dispatch(Filter(filter));
 	}
 }
 
+export function clr(filter){
+	console.log(filter)
+	return function(dispatch) {
+		dispatch(clear(filter))
+		update(dispatch)
+	}
+}
+
+export function checkAll(){
+	return function(dispatch) {
+		dispatch(chALL())
+		update(dispatch)
+	}
+}

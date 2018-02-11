@@ -1,26 +1,27 @@
 # Todo List
 
-una todo list hecha en react usando firebase como host y auth
-
+una todo list hecha en react usando redux y otras herramientas.
 ## Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
 
-### Pre-requisitos 📋
+### Una vez con el codigo en tus manos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Que cosas necesitas para instalar el software y como instalarlas junto con como correrlo_
 
 ```
 npm install
+npm start
 ```
 
 
 ## Construido con 🛠️
 
 
-* [FIREBASE](http://www.firebase.com) - herramientas
-* [REACT](https://react.com/) - El framework web usado
+* [REACT](https://reactjs.org/) - El framework web usado
+* [REDUX](https://redux.js.org/) - herramientas
+
 
 
 
@@ -28,13 +29,8 @@ npm install
 ## Autores ✒️
 
 
-* **Andrés Colemenares** - *Trabajo Inicial* - [villanuevand](https://github.com/Raethandres)
-* **Andrés Villanueva** - *README.md* - [villanuevand](https://github.com/villanuevand)
+* **Andrés Colemenares** - *Trabajo Inicial* - [Raethandres](https://github.com/Raethandres)
 
 
-## Expresiones de Gratitud 🎁
+## Gracias por visitar🎁
 
-* Invita una cerveza 🍺 a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* Inspiración.
-* etc.

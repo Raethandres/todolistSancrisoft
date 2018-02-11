@@ -10,10 +10,11 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={Store}>
-      	<BrowserRouter>
-        	 <Layer/>
-         </BrowserRouter>
+      <BrowserRouter>
+      	<Layer/>
+      </BrowserRouter>
       </Provider>
+
      
     );
   }
