@@ -30,7 +30,7 @@ export default class List extends Component {
     onKeyPress(e){
         if (e.key === 'Enter') {
             this.setState({upd:false})
-            this.props.dispatch(updateList({name:this.state.value,id:this.props.id,uready:this.state.done}))
+            this.props.dispatch(updateList({name:this.state.value,id:this.props.id,uready:!this.state.done}))
         }
     }
   
@@ -46,7 +46,7 @@ export default class List extends Component {
             ) : (
             <p  className=" item" onDoubleClick={this.onClick.bind(this)}>{this.state.value}</p>
          )}
-        <p  className="item" onClick={this.Delete.bind(this)}><i className="fa fa-times" aria-hidden="true"></i></p>
+        <p  className="item" onClick={this.Delete.bind(this)}><i className="fa fa-times delete" aria-hidden="true"></i></p>
      	</li>
     	);
   }

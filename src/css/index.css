@@ -52,7 +52,7 @@ body{
 input{
     /* width: 360px; */
     background: #fff;
-    color: #a3a3a3;
+    color: #5a5959;
     font: inherit;
     -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
             box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
@@ -118,15 +118,19 @@ input[type=checkbox]:checked {
 }
 
 .letf{
-    background: #7f8ff4;
-    color: #fff;
+    color: rgb(0, 0, 0);
     display: inline-block;
     border: 0;
     outline: 0;
     cursor: pointer;
-    background: #7f8ff4;
+    background: #ececee;
     -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
             box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     padding: 12px 3px;
+}
+.delete:hover {
+    background: rgb(196, 49, 49);
+    color: white;
+    border-radius: 5px;
 }

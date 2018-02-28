@@ -5,6 +5,7 @@ export default function reducer(state={
 	listShow:[],
 	filter:0,
 	error:null,
+	ch:false,
 },action) {
 	switch (action.type){
 		case "FETTCH_LIST":{
@@ -35,11 +36,12 @@ export default function reducer(state={
 		}
 		case "CHECK_ALL":{
 			let data=[...state.list]
-			data.forEach(i=> {i.uready=false})
+			data.forEach(i=> {i.uready=state.ch})
 
 			return{
 				...state,
 				list:data,
+				ch:!state.ch,
 
 			}
 		}

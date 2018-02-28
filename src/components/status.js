@@ -23,12 +23,12 @@ export default class Status extends Component {
 
   render() {
    return (
-     <div className="row">
-     
-    <div className="row">
-    <div className="row item">
+     <div className="col">
+     <div className="row item">
      <p className="letf">{this.props.left} items left</p>
     </div>
+    <div className="row">
+    
     <div className="row item">
      <p  className={this.state.A} onClick={this.onClick.bind(this,"A")} >All</p>
      <p  className={this.state.false} onClick={this.onClick.bind(this,false)} >Active</p>
